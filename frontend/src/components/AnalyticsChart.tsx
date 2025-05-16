@@ -8,6 +8,7 @@ import {
     Title,
     Tooltip,
     Legend,
+    ChartOptions,
 } from "chart.js";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -32,11 +33,12 @@ const AnalyticsChart: React.FC<AnalyticsChartProps> = ({ labels, data, title }) 
         ],
     };
 
-    const options = {
+    // Explicitly define the options type using ChartOptions for a "bar" chart
+    const options: ChartOptions<"bar"> = {
         responsive: true,
         plugins: {
             legend: {
-                position: "top",
+                position: "top", // Valid TypeScript value
             },
             title: {
                 display: true,

@@ -1,23 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Welcome to Form-PWA</h1>
+        <p>Please log in to continue.</p>
+        <form>
+          <label htmlFor="username">Username:</label>
+          <input type="text" id="username" name="username" />
+
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" name="password" />
+
+          <button type="submit">Login</button>
+        </form>
       </header>
     </div>
   );

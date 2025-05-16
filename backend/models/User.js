@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-  username: String,
-  password: String, // Hashed password
-  roles: [String], // e.g., ['admin', 'user']
-  permissions: [String], // e.g., ['create-form', 'submit-form']
-  updatedAt: { type: Date, default: Date.now },
+  username: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  role: { type: String, required: true }, // 'admin' or 'user'
 });
 
 module.exports = mongoose.model('User', UserSchema);
